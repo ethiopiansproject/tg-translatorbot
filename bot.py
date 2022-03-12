@@ -17,7 +17,7 @@ def translate_text(update,context):
 <b>{translation.text}</b> 
 <code>\nPowered by @The_ep </code>''',quote=True)
    
-updater = ('5171615033:AAEi0-vaZjzz-sUXI_7jmJU5OSECi95J-Ag')
+updater = Updater('5171615033:AAEi0-vaZjzz-sUXI_7jmJU5OSECi95J-Ag')
 
 dp = updater.dispatcher
 dp.add_handler(CommandHandler('start',start))
