@@ -1,4 +1,5 @@
 #basic google translator bot
+import os
 from telegram import*
 from telegram.ext import*
 from googletrans import Translator
