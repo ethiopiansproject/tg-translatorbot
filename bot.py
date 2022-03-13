@@ -4,7 +4,6 @@ from telegram import*
 from telegram.ext import*
 from googletrans import Translator
 
-bot_token = os.getenv[BOT_TOKEN]
 def start(update,context):
  user_info = update.effective_user
  update.message.reply_markdown_v2(f'ሠላም ውድ {user_info.mention_markdown_v2()} የተለያዩ ቋንቋዎችን ወደ አማርኛ መቶርጎም እችላለው😊\nየፈለጋችሁትን ፅፈት ላኩልኝ፣መልካም ግዜ🤗')
