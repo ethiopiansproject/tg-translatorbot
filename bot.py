@@ -15,8 +15,8 @@ def translate_text(update,context):
     translation = translator.translate(user_msg,dest='am')
     context.bot.sendChatAction(update.message.chat_id, 'typing')
     update.message.reply_html(f'''
-<b>{translation.text}</b> 
-<code>\nPowered by @The_ep </code>''',quote=True)
+<code><b>{translation.text}</b> </code>
+\nPowered by @The_ep''',quote=True)
    
 updater = Updater(os.getenv("BOT_TOKEN"))
 
