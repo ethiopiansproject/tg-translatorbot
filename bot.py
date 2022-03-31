@@ -1,3 +1,4 @@
+
 #basic google translator bot
 import os
 from telegram import*
@@ -5,8 +6,16 @@ from telegram.ext import*
 from googletrans import Translator
 
 def start(update,context):
+ kb = [
+     [
+         InlineKeyboardButton('Group',url='t.me/ethiopians_project'),
+            InlineKeyboardButton('Channel',url='t.me/ethiopiansproject')
+     ]
+ ]
+ btns = InlineKeyboardMarkup(kb)
+    
  user_info = update.effective_user
- update.message.reply_markdown_v2(f'ሠላም ውድ {user_info.mention_markdown_v2()} የተለያዩ ቋንቋዎችን ወደ አማርኛ መቶርጎም እችላለው😊\nየፈለጋችሁትን ፅፈት ላኩልኝ፣መልካም ግዜ🤗')
+ update.message.reply_markdown_v2(f'ሠላም ውድ {user_info.mention_markdown_v2()} የተለያዩ ቋንቋዎችን ወደ አማርኛ መቶርጎም እችላለው😊\nየፈለጋችሁትን ፅፈት ላኩልኝ፣መልካም ግዜ🤗',reply_markup=btns)
            
 def translate_text(update,context):
     id = update.message.chat_id
@@ -19,6 +28,7 @@ def translate_text(update,context):
 \nPowered by @The_ep''',quote=True)
    
 updater = Updater(os.getenv("BOT_TOKEN"))
+
 
 dp = updater.dispatcher
 dp.add_handler(CommandHandler('start',start))
