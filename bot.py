@@ -22,7 +22,7 @@ def translate_text(update,context):
     user_msg = update.message.text
     translator = Translator()
     translation = translator.translate(user_msg,dest='am')
-    context.bot.sendChatAction(update.message.chat_id, 'typing')
+    context.bot.sendChatAction(id, 'typing')
     update.message.reply_html(f'''
 <code><b>{translation.text}</b> </code>
 \nPowered by @The_ep''',quote=True)
