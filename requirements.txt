@@ -1,0 +1,5 @@
+pyrogram
+TgCrypto
+googletrans==3.1.0a0
+pymongo
+pymongo [srv]
